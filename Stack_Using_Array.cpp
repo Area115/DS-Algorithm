@@ -4,32 +4,50 @@ int top = -1 ;
 
 
 
-// struct stack{
-//     int size;
-//     int top ;
-//     int *arr;
+struct stack{
+    int size;
+    int top ;
+    int *arr;
     
-// };
+};
 
-void push(int element , int arr[]){
-    top = top +1 ;
-    arr[top] = element;
+int isEmpty(struct stack *ptr){
+    if(ptr->top == -1){
+        
+        return 1;
+    }
+    else{
+        
+        return 0;
+    }
 }
 
-void pop(int element , int arr[]){
-    top = top +1 ;
-    arr[top] = element;
+int isFull(struct stack *ptr){
+    if(ptr->top == ptr->size-1){
+        return 1;
+    }
+    else{
+        
+        return 0;
+    }
 }
 
 
 
 int main(){
-    int arr[5] = {1,2,3};
-    cout<<arr[2]<<endl;
-    arr[3] = 445;
-    cout<<arr[3];
-   
+   struct stack *s;
+   s->size = 6;
+   s->top = -1;
+   s->arr = (int *)malloc(s->size*sizeof(int));
+//    if(isEmpty(s) == 1){
+//        cout<<"Array is Empty"<<endl;
+//    }
+//    else{
+//        cout<<" Array is not Empty"<<endl;
+//    }
+    int k = isEmpty(s) ;
+    cout<<" CCNUIH"<<k;
 
-    
+
    return 0 ; 
 }
